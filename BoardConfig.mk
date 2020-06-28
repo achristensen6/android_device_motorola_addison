@@ -23,9 +23,9 @@ BOARD_VENDOR := motorola-qcom
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(DEVICE_PATH)/fs_config/mot_aids.txt \
-    $(DEVICE_PATH)/fs_config/qcom_aids.txt \
+TARGET_FS_CONFIG_GEN :=
+    $(DEVICE_PATH)/fs_config/mot_aids.txt
+    $(DEVICE_PATH)/fs_config/qcom_aids.txt
     $(DEVICE_PATH)/fs_config/file_caps.txt
 
 # Platform
@@ -34,7 +34,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 
 # Architecture
 TARGET_ARCH := arm
@@ -84,7 +84,7 @@ QCOM_BT_READ_ADDR_FROM_PROP := true
 
 # Camera
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+TARGET_PROCESS_SDK_VERSION_OVERRIDE :=
     /system/vendor/bin/mm-qcamera-daemon=26
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -142,9 +142,9 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Shim
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libsensorndkbridge.so|libshim_ril.so \
+TARGET_LD_SHIM_LIBS :=
+    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so
+    /system/vendor/lib/libsensorndkbridge.so|libshim_ril.so
     /system/lib/libjustshoot.so|libjustshoot_shim.so
 
 # Sensors
@@ -162,7 +162,7 @@ MOT_SENSOR_HUB_FEATURE_PEDO := true
 MOT_SENSOR_HUB_FEATURE_ULTRASOUND := true
 
 # Soong
-PRODUCT_SOONG_NAMESPACES += \
+PRODUCT_SOONG_NAMESPACES +=
     $(DEVICE_PATH)/libhidl \
     $(DEVICE_PATH)/libshims
 
