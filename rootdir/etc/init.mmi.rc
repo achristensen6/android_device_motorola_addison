@@ -32,12 +32,12 @@ on early-boot
 on early-init
 
 on init
-    chown system log /sys/fs/pstore/console-ramoops-0
-    chmod 0440 /sys/fs/pstore/console-ramoops-0
-    chown system log /sys/fs/pstore/annotate-ramoops-0
-    chmod 0640 /sys/fs/pstore/annotate-ramoops-0
-    chown system log /sys/fs/pstore/dmesg-ramoops-0
-    chmod 0640 /sys/fs/pstore/dmesg-ramoops-0
+    chown system log /sys/fs/pstore/console-ramoops-1
+    chmod 0440 /sys/fs/pstore/console-ramoops-1
+    chown system log /sys/fs/pstore/annotate-ramoops-1
+    chmod 0640 /sys/fs/pstore/annotate-ramoops-1
+    chown system log /sys/fs/pstore/dmesg-ramoops-1
+    chmod 0640 /sys/fs/pstore/dmesg-ramoops-1
 
     # Change ownership for for HBM feature
     chown system system /sys/class/graphics/fb0/hbm
@@ -260,7 +260,7 @@ service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
 
 # Start Sensor daemon
 service vendor.motosh /vendor/bin/motosh boot
-    class late_start
+    class core
     user compass
     group compass misc input
     oneshot
@@ -268,7 +268,6 @@ service vendor.motosh /vendor/bin/motosh boot
 service vendor.thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
-    disabled
 
 # Set RPS Mask for Wifi Hotspot
 on property:sys.wifi.tethering=true
