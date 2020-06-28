@@ -78,7 +78,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.qmi.adb_logmask=0 \
+    persist.data.qmi.adb_logmask=5 \
     persist.radio.apn_delay=5000 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.msgtunnel.start=true \
